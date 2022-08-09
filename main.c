@@ -1,12 +1,6 @@
-/*
-by kenta shimazaki
-*/
 
 # include "headers.h"
 
-/*
-by kenta shimazaki
-*/
 struct UserControl userControl;
 struct World world;
 
