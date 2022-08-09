@@ -1,6 +1,4 @@
-/*
-by Kenta Shimazaki
-*/
+
 # include "headers.h"
 
 /*RGB値を代入する．0以上255以下の範囲外の数は受け付けない*/
