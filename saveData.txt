@@ -1,0 +1,13 @@
+18
+select 1272 2655
+tutorial 102 2
+level1-2 13 1
+level1-5 7 5
+select 86 18
+level4-5 7 5
+level2-5 7 5
+level3-3 25 7
+level3-5 7 5
+select 11 46
+select 91 42
+NULL -1 -1
