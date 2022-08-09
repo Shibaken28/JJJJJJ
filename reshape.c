@@ -1,7 +1,3 @@
-/*
-by kenta shimazaki
-*/
-
 # include "headers.h"
 
 void Reshape(int w,int h){
