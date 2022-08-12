@@ -1,4 +1,3 @@
-
 # include "headers.h"
 
 void PutSpriteSize(int num, int x, int y, pngInfo *info,int w,int h,int rot);
@@ -329,12 +328,12 @@ void hitFunc(){
                         struct Vec2 ul3,ul4,br3,br4;
                         Vec2AddSch(&ndlPos,-world.player.size.x,-world.player.size.y, &ul3);
                         Vec2AddSch(&ul3,world.chipSize/2,world.chipSize,&br3);
-                        if(isInRect(&world.player.pos,&ul3,&br3)&&world.player.pos.y>-2*(world.player.pos.x-ul3.x-world.chipSize/2)+ul3.y){
+                        if(isInRect2(&world.player.pos,&ul3,&br3)&&world.player.pos.y>-2*(world.player.pos.x-ul3.x-world.chipSize/2)+ul3.y){
                             playerDead(0);
                         }
                         Vec2AddSch(&ndlPos,world.chipSize/2,-world.player.size.y, &ul4);
                         Vec2AddSch(&ul4,world.chipSize/2,world.chipSize,&br4);
-                        if(isInRect(&world.player.pos,&ul4,&br4)&&world.player.pos.y>2*(world.player.pos.x-ul4.x)+ul4.y){
+                        if(isInRect2(&world.player.pos,&ul4,&br4)&&world.player.pos.y>2*(world.player.pos.x-ul4.x)+ul4.y){
                             playerDead(0);
                         }
                     }else if(world.level.map[y][x].status[S_DIR] == D_DOWN){
@@ -346,12 +345,12 @@ void hitFunc(){
                         struct Vec2 ul3,ul4,br3,br4;
                         Vec2AddSch(&ndlPos,world.chipSize/2,0, &ul3);
                         Vec2AddSch(&ul3,world.chipSize/2,world.chipSize,&br3);
-                        if(isInRect(&world.player.pos,&ul3,&br3)&&world.player.pos.y<-2*(world.player.pos.x-ul3.x-world.chipSize/2)+ul3.y){
+                        if(isInRect2(&world.player.pos,&ul3,&br3)&&world.player.pos.y<-2*(world.player.pos.x-ul3.x-world.chipSize/2)+ul3.y){
                             playerDead(0);
                         }
                         Vec2AddSch(&ndlPos,-world.player.size.x,0, &ul4);
                         Vec2AddSch(&ul4,world.chipSize/2,world.chipSize,&br4);
-                        if(isInRect(&world.player.pos,&ul4,&br4)&&world.player.pos.y<2*(world.player.pos.x-ul4.x)+ul4.y){
+                        if(isInRect2(&world.player.pos,&ul4,&br4)&&world.player.pos.y<2*(world.player.pos.x-ul4.x)+ul4.y){
                             playerDead(0);
                         }
                     }else if(world.level.map[y][x].status[S_DIR] == D_RIGHT){
@@ -363,29 +362,29 @@ void hitFunc(){
                         struct Vec2 ul3,ul4,br3,br4;
                         Vec2AddSch(&ndlPos,0,-world.player.size.y, &ul3);
                         Vec2AddSch(&ul3,world.chipSize,world.chipSize/2,&br3);
-                        if(isInRect(&world.player.pos,&ul3,&br3)&&world.player.pos.y>0.5*(world.player.pos.x-ul3.x)+ul3.y){
+                        if(isInRect2(&world.player.pos,&ul3,&br3)&&world.player.pos.y>0.5*(world.player.pos.x-ul3.x)+ul3.y){
                             playerDead(0);
                         }
                         Vec2AddSch(&ndlPos,0,world.chipSize/2, &ul4);
                         Vec2AddSch(&ul4,world.chipSize,world.chipSize/2,&br4);
-                        if(isInRect(&world.player.pos,&ul4,&br4)&&world.player.pos.y<-0.5*(world.player.pos.x-ul4.x)+ul4.y+world.chipSize/2){
+                        if(isInRect2(&world.player.pos,&ul4,&br4)&&world.player.pos.y<-0.5*(world.player.pos.x-ul4.x)+ul4.y+world.chipSize/2){
                             playerDead(0);
                         }
                     }else if(world.level.map[y][x].status[S_DIR] == D_LEFT){
-                        Vec2AddSch(&ndlPos,world.chipSize-world.player.size.x,-world.player.size.y, &ul1);
-                        Vec2AddSch(&ul1,world.player.size.x,world.player.size.y+world.chipSize,&br1);
-                        Vec2AddSch(&ndlPos,-world.player.size.x, world.chipSize/2-world.player.size.y, &ul2);
-                        Vec2AddSch(&ul2,world.chipSize,world.player.size.y,&br2);
+                        Vec2AddSch(&ndlPos,world.chipSize-world.player.size.x,-world.player.size.y, &ul2);
+                        Vec2AddSch(&ul2,world.player.size.x,world.player.size.y+world.chipSize,&br2);
+                        Vec2AddSch(&ndlPos,-world.player.size.x, world.chipSize/2-world.player.size.y, &ul1);
+                        Vec2AddSch(&ul1,world.chipSize,world.player.size.y,&br1);
                         //斜めの部分の判定
                         struct Vec2 ul3,ul4,br3,br4;
                         Vec2AddSch(&ndlPos,-world.player.size.x,world.chipSize/2, &ul3);
                         Vec2AddSch(&ul3,world.chipSize,world.chipSize/2,&br3);
-                        if(isInRect(&world.player.pos,&ul3,&br3)&&world.player.pos.y<0.5*(world.player.pos.x-ul3.x)+ul3.y){
+                        if(isInRect2(&world.player.pos,&ul3,&br3)&&world.player.pos.y<0.5*(world.player.pos.x-ul3.x)+ul3.y){
                             playerDead(0);
                         }
                         Vec2AddSch(&ndlPos,-world.player.size.x,-world.player.size.y, &ul4);
                         Vec2AddSch(&ul4,world.chipSize,world.chipSize/2,&br4);
-                        if(isInRect(&world.player.pos,&ul4,&br4)&&world.player.pos.y>-0.5*(world.player.pos.x-ul4.x-world.chipSize)+ul4.y){
+                        if(isInRect2(&world.player.pos,&ul4,&br4)&&world.player.pos.y>-0.5*(world.player.pos.x-ul4.x-world.chipSize)+ul4.y){
                             playerDead(0);
                         }
                     }
