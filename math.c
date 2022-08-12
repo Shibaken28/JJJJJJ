@@ -1,3 +1,6 @@
+/*
+by kenta shimazaki
+*/
 
 # include "headers.h"
 
@@ -21,6 +24,7 @@ int isRectCollision(struct Vec2 *a,struct Vec2 *b,struct Vec2 *c,struct Vec2 *d)
 int isCircleCollision(struct Vec2 *p1,float r1,struct Vec2 *p2,float r2);
 float Noml2(struct Vec2 *p);
 int isInRangeHalf(float x,float l,float r);
+int isInRect2(struct Vec2 *a, struct Vec2 *ul, struct Vec2 *br);
 
 // a <- (x,y)
 void Vec2Set(struct Vec2 *a,float x,float y){
@@ -79,10 +83,21 @@ int isInRange(float x,float l,float r){
     if(l < x && x < r)ret = 1;
     return ret;
 }
+int isInRange2(float x,float l,float r){
+    int ret = 0;
+    if(l <= x && x <= r)ret = 1;
+    return ret;
+}
 
 int isInRangeHalf(float x,float l,float r){
     int ret = 0;
-    if(l <= x && x < r)ret = 1;
+    if(l < x && x < r)ret = 1;
+    return ret;
+}
+
+int isInRect2(struct Vec2 *a, struct Vec2 *ul, struct Vec2 *br){
+    int ret = 0;
+    if(isInRange2(a->x, ul->x, br->x) && isInRange2(a->y, ul->y, br->y) )ret = 1;
     return ret;
 }
 
