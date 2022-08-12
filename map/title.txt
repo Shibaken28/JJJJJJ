@@ -18,5 +18,6 @@ END
 19 5 warp_zone
 2 10 MOVE_arrow-kay
 10 10 JUMP_Z-key
+9 6 Ver.1.1.0
 -1 -1 NULL
 
