@@ -196,6 +196,7 @@ float clampf(float* a,float l,float r);
 int isExistCommonRange(float l1,float r1,float l2,float r2);
 int isInRect(struct Vec2 *a, struct Vec2 *ul, struct Vec2 *br);
 int isInRange(float x,float l,float r);
+int isInRange2(float x,float l,float r);
 int isRectCollision(struct Vec2 *p1,struct Vec2 *s1,struct Vec2 *p2,struct Vec2 *s2);
 int isCircleCollision(struct Vec2 *p1,float r1,struct Vec2 *p2,float r2);
 float Noml2(struct Vec2 *p);
@@ -226,6 +227,7 @@ void glVertexVec2(struct Vec2 *p);
 void drawRectRot(struct Vec2 *p,float r,struct color *c,float Rot);
 void drawRectFrameRot(struct Vec2 *p,float r,struct color *c,int size,float Rot);
 void colorCpy(struct color *from,struct color *to);
+int isInRect2(struct Vec2 *a, struct Vec2 *ul, struct Vec2 *br);
 
 void drawEffect();
 void addEffect(struct Vec2 *p,struct color *col,int type,int size);
