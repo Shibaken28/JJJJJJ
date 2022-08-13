@@ -1,3 +1,7 @@
+/*
+by kenta shimazaki
+*/
+
 # include "headers.h"
 
 void PutSpriteSize(int num, int x, int y, pngInfo *info,int w,int h,int rot);
@@ -123,16 +127,17 @@ void movePlayer(){
         int cx = world.level.enemy[i].pos.x/world.chipSize;
         int cy = world.level.enemy[i].pos.y/world.chipSize;
         //周囲のマスと衝突しているかを確認
-        for(int dx = -1; dx<=1; dx++){
-            for(int dy = -1; dy<=1; dy++){
+        for(int dx = -1; dx<=2; dx++){
+            for(int dy = -1; dy<=2; dy++){
                 int x = cx+dx;
                 int y = cy+dy;
-                if(isInRangeHalf(x,0,world.mapWidth)&&isInRangeHalf(y,0,world.mapHeight)){
+                if(isInRange2(x,0,world.mapWidth)&&isInRange2(y,0,world.mapHeight)){
                     if(isWall(&world.level.map[y][x])==1){
                         struct Vec2 ul,br;
                         Vec2Set(&ul,x*world.chipSize,y*world.chipSize);
                         Vec2Add(&ul,&world.chipSizeVec2,&br);
                         if(isInRect(&world.level.enemy[i].pos,&ul,&br)){
+                            //printf("12%d\n",rand());
                             Vec2MulOwn(&world.level.enemy[i].vel,-1);
                         }
                     }
