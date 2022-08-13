@@ -2,6 +2,7 @@
 cygwin(バージョン 3.2.0-1)
 
 ## ビルド方法
+### tar.gzファイルの場合
 j19415.tar.gzがあるディレクトリで，次のコマンドを実行ます．
 ```
 $ gzip -dv j19415.tar.gz
@@ -10,6 +11,13 @@ $ cd j19415
 $ make
 $ ./j19415
 ```
+### GitHubからダウンロードしてビルドする場合(たぶん)
+```
+git clone https://github.com/Shibaken28/JJJJJJ.git
+cd JJJJJJ
+make
+```
+
 
 ## ゲーム概要
 主人公のJ君を操作してJコインを集めるプラットフォームゲームです．
