@@ -1,6 +1,3 @@
-/*
-by kenta shimazaki
-*/
 
 # include "headers.h"
 
