@@ -13,9 +13,10 @@ $ ./j19415
 ```
 ### GitHubからダウンロードしてビルドする場合(たぶん)
 ```
-git clone https://github.com/Shibaken28/JJJJJJ.git
-cd JJJJJJ
-make
+$ git clone https://github.com/Shibaken28/JJJJJJ.git
+$ cd JJJJJJ
+$ make
+$ ./j19415
 ```
 
 
